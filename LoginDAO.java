@@ -1,26 +1,27 @@
-package com.niit.ShoppingCart;
+package com.niit.ShoppingCart.DAO;
 
-public class LoginDAO {
-	
 
-	public boolean isValidUser(String userID,String password)
-	{
-		if (userID.equals("niit")&& password.equals("niit"))
-		{
-	return true;
-}
-else
-{
-	return false;
-}
-	}
-}
 
-		
-		
-	
+import java.util.List;
 
+import com.niit.ShoppingCart.model.Login;
+
+
+public interface LoginDAO {
 
 	
-
+	public List<Login> list();
+	
+	public Login get(int id);
+	
+	public Login getSingleUser(int id);
+	
+	public void save(Login login);
+	
+	public void update(Login login);
+	
+	public List getAllUsers();
+	
+	public void delete(int id);
+}
 

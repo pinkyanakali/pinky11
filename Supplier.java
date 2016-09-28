@@ -1,55 +1,100 @@
-package com.niit.ShoppingCart;
-import java.util.List;
+package com.niit.ShoppingCart.model;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+import org.springframework.stereotype.Component;
+
+@Entity
+@Table
+@Component
 public class Supplier {
-	
-	private String id;
-	private String name;
-	private String address; 
-	private Product product;
-	
-	private List<Product> products;
 
-		public Supplier(String id, String name, String address, Product product, List<Product> products) {
-		super();
-		this.id = id;
-		this.name = name;
-		this.address = address;
-		this.product = product;
-		this.products = products;
-	}
-		public String getId() {
+	@javax.persistence.Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "Id")
+	private int id;
+	@NotNull
+	@Size(min=2,max=30)
+	 @Column(name="supid")
+	private int supid;
+	@NotNull
+	@Size(min=2,max=30)
+	 @Column(name="supname")
+	private String supname;
+	@NotNull
+	@Size(min=2,max=30)
+	 @Column(name="suplocation")
+	private String suplocation;
+	@NotNull
+	@Size(min=2,max=30)
+	 @Column(name="categoryid")
+	private int categoryid;
+	@NotNull
+	@Size(min=2,max=30)
+	 @Column(name="categoryname")
+	private String categoryname;
+	
+	@NotNull
+	@Size(min=2,max=30)
+	 @Column(name="productid")
+	private int productid;
+	@NotNull
+	@Size(min=2,max=30)
+	 @Column(name="productname")
+	private String productname;
+	public int getId() {
 		return id;
 	}
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
+	public int getSupid() {
+		return supid;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setSupid(int supid) {
+		this.supid = supid;
 	}
-	public String getAddress() {
-		return address;
+	public String getSupname() {
+		return supname;
 	}
-	public void setAddress(String address) {
-		this.address = address;
+	public void setSupname(String supname) {
+		this.supname = supname;
 	}
-	public Product getProduct() {
-		return product;
+	public String getSuplocation() {
+		return suplocation;
 	}
-	public void setProduct(Product product) {
-		this.product = product;
+	public void setSuplocation(String suplocation) {
+		this.suplocation = suplocation;
 	}
-	public List<Product> getProducts() {
-		return products;
+	public int getCategoryid() {
+		return categoryid;
 	}
-	public void setProducts(List<Product> products) {
-		this.products = products;
+	public void setCategoryid(int categoryid) {
+		this.categoryid = categoryid;
 	}
-
+	public String getCategoryname() {
+		return categoryname;
+	}
+	public void setCategoryname(String categoryname) {
+		this.categoryname = categoryname;
+	}
+	public int getProductid() {
+		return productid;
+	}
+	public void setProductid(int productid) {
+		this.productid = productid;
+	}
+	public String getProductname() {
+		return productname;
+	}
+	public void setProductname(String productname) {
+		this.productname = productname;
+	}
 	
-	
-	
-	}
+}
